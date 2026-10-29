@@ -1,0 +1,101 @@
+<div class="pagina-home">
+  <div class="text-center carregando" ng-show="carregando">
+    <span class="spinner"></span> Carregando...
+  </div>
+  <div class="container" ng-show="erro"><div class="alert alert-danger">{{erro}}</div></div>
+
+  <hero-carousel banners="banners" ng-if="banners"></hero-carousel>
+
+  <!-- Resolva as questões do dia a dia -->
+  <section class="secao secao-atalhos">
+    <div class="container">
+      <h2 class="titulo-secao">Resolva as questões do dia a dia</h2>
+      <ul class="row list-unstyled atalhos-lista">
+        <li class="col-xs-12 col-sm-6 col-md-4" ng-repeat="atalho in atalhos">
+          <a ng-href="{{atalho.link}}" class="atalho-card" aria-label="{{atalho.titulo}} {{atalho.descricao}}">
+            <span class="glyphicon {{atalho.icone}} atalho-icone"></span>
+            <strong>{{atalho.titulo}}</strong>
+            <span class="atalho-desc">{{atalho.descricao}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contrate nossos produtos online -->
+  <section class="secao secao-produtos">
+    <div class="container">
+      <h2 class="titulo-secao">Contrate nossos produtos online</h2>
+      <p class="subtitulo-secao">Confira as soluções que o banco Itaú oferece para você.</p>
+      <div class="row">
+        <div ng-repeat="produto in produtos" ng-class="$index < 2 ? 'col-sm-6' : 'col-sm-4'">
+          <div class="produto-card" ng-class="{'produto-card-grande': $index < 2}">
+            <div class="produto-texto">
+              <span class="produto-categoria"><span class="glyphicon {{produto.icone}}"></span> {{produto.categoria}}</span>
+              <h3>{{produto.titulo}}</h3>
+              <p>{{produto.descricao}}</p>
+              <a ng-href="{{produto.link}}" class="link-seta">{{produto.cta}} <span>&rsaquo;</span></a>
+            </div>
+            <div class="produto-imagem" ng-style="{'background-color': produto.cor}">
+              <span class="glyphicon {{produto.icone}}"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cartões mais pedidos -->
+  <section class="secao secao-cartoes">
+    <div class="container">
+      <h2 class="titulo-secao">Confira nossos cartões de crédito mais pedidos da semana</h2>
+      <card-carousel itens="cartoesMaisPedidos" por-pagina="3" template="app/partials/card-cartao.html"></card-carousel>
+    </div>
+  </section>
+
+  <!-- feito.itaú -->
+  <section class="secao secao-destaques">
+    <div class="container">
+      <span class="tag-feito">@ feito.itaú</span>
+      <h2 class="titulo-secao">Confira os principais destaques do feito.itaú que separamos para você</h2>
+      <card-carousel itens="destaques" por-pagina="3" template="app/partials/card-destaque.html"></card-carousel>
+      <div class="text-center"><a href="#!/" class="btn btn-outline-navy">Acesse o feito.itaú</a></div>
+    </div>
+  </section>
+
+  <!-- Apps -->
+  <section class="secao secao-apps">
+    <div class="container">
+      <h2 class="titulo-secao">Resolva tudo pelos apps</h2>
+      <p class="subtitulo-secao">Com os nossos aplicativos, você faz tudo pelo seu celular!</p>
+      <ul class="list-inline apps-lista">
+        <li ng-repeat="app in apps">
+          <a href="#!/" class="app-icone {{app.classe}}" aria-label="logo {{app.nome}}">itaú</a>
+          <span>{{app.nome}}</span>
+        </li>
+      </ul>
+      <a href="#!/agencias" class="link-seta">Conheça os canais <span>&rsaquo;</span></a>
+    </div>
+  </section>
+
+  <!-- Agências -->
+  <section class="secao secao-agencias">
+    <div class="container">
+      <div class="agencia-box">
+        <span class="produto-categoria"><span class="glyphicon glyphicon-map-marker"></span> Agências</span>
+        <h2>Qual a agência Itaú mais próxima?</h2>
+        <form class="form-agencia" ng-submit="buscarAgencia()">
+          <label for="busca-agencia">Busque por endereço, agência, CEP</label>
+          <div class="input-group input-group-lg">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+            <input id="busca-agencia" name="address" type="text" class="form-control" ng-model="buscaAgencia.termo" placeholder="Ex.: Av. Paulista, 0350, 01310-100">
+            <span class="input-group-btn"><button class="btn btn-itau" type="submit">Buscar</button></span>
+          </div>
+          <a href="#!/agencias" class="link-localizacao"><span class="glyphicon glyphicon-screenshot"></span> Usar minha localização atual</a>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <a href="#!/abra-sua-conta" class="barra-abra-conta"><span class="glyphicon glyphicon-briefcase"></span> Abra sua conta</a>
+</div>

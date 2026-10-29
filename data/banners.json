@@ -1,0 +1,6 @@
+[
+  { "id": 1, "titulo": "Renegocie com condição especial", "subtitulo": "Organize suas finanças de forma simples, rápida e digital", "cta": "Saiba mais", "link": "#!/emprestimos", "tema": "tema-sala" },
+  { "id": 2, "titulo": "Novo Uniclass Mastercard Black", "subtitulo": "Com até 2,5 pontos por dólar gasto e 4 acessos a salas VIP", "cta": "Saiba mais", "link": "#!/cartoes", "tema": "tema-black" },
+  { "id": 3, "titulo": "Plano Plus de IA grátis!", "subtitulo": "12 meses de assistente de IA como benefício exclusivo do Minhas Vantagens", "cta": "Saiba mais", "link": "#!/", "tema": "tema-azul" },
+  { "id": 4, "titulo": "Chega de esperar o cartão virar", "subtitulo": "Escolha o melhor dia de vencimento e compre com mais tranquilidade", "cta": "Saiba mais", "link": "#!/cartoes", "tema": "tema-laranja" }
+]

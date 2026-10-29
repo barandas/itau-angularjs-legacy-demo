@@ -1,0 +1,92 @@
+<div class="pagina-interna">
+  <section class="banner-interno">
+    <div class="container">
+      <ol class="breadcrumb"><li><a href="#!/">Início</a></li><li class="active">Abra sua conta</li></ol>
+      <h1>Abra sua conta</h1>
+      <p>Rápido, digital e sem burocracia.</p>
+    </div>
+  </section>
+
+  <div class="container secao">
+    <div class="alert alert-warning"><strong>Demonstração:</strong> nenhum dado é enviado ou armazenado. Use dados fictícios.</div>
+
+    <ul class="etapas list-inline">
+      <li ng-class="{'ativa': etapa >= 1}"><span>1</span> Seus dados</li>
+      <li ng-class="{'ativa': etapa >= 2}"><span>2</span> Tipo de conta</li>
+      <li ng-class="{'ativa': etapa >= 3}"><span>3</span> Confirmação</li>
+    </ul>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+
+        <!-- Etapa 1 -->
+        <form name="formDados" novalidate ng-if="etapa === 1" ng-submit="avancar(formDados)" class="panel panel-default">
+          <div class="panel-body">
+            <div class="form-group" ng-class="{'has-error': (formDados.$submitted || formDados.nome.$touched) && formDados.nome.$invalid}">
+              <label for="nome">Nome completo</label>
+              <input id="nome" name="nome" type="text" class="form-control" ng-model="dados.nome" required ng-minlength="5" ng-pattern="/^[A-Za-zÀ-ú]+( [A-Za-zÀ-ú]+)+$/">
+              <span class="help-block" ng-show="(formDados.$submitted || formDados.nome.$touched) && formDados.nome.$error.required">Informe seu nome.</span>
+              <span class="help-block" ng-show="(formDados.$submitted || formDados.nome.$touched) && (formDados.nome.$error.pattern || formDados.nome.$error.minlength)">Informe nome e sobrenome.</span>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 form-group" ng-class="{'has-error': (formDados.$submitted || formDados.cpf.$touched) && formDados.cpf.$invalid}">
+                <label for="cpf">CPF</label>
+                <input id="cpf" name="cpf" type="text" class="form-control" ng-model="dados.cpf" ui-mascara="999.999.999-99" cpf-valido required placeholder="000.000.000-00">
+                <span class="help-block" ng-show="(formDados.$submitted || formDados.cpf.$touched) && formDados.cpf.$error.required">Informe seu CPF.</span>
+                <span class="help-block" ng-show="(formDados.$submitted || formDados.cpf.$touched) && formDados.cpf.$error.cpf">CPF inválido.</span>
+              </div>
+              <div class="col-sm-6 form-group" ng-class="{'has-error': (formDados.$submitted || formDados.nascimento.$touched) && formDados.nascimento.$invalid}">
+                <label for="nascimento">Data de nascimento</label>
+                <input id="nascimento" name="nascimento" type="date" class="form-control" ng-model="dados.nascimento" maior-idade required>
+                <span class="help-block" ng-show="(formDados.$submitted || formDados.nascimento.$touched) && formDados.nascimento.$error.maiorIdade">É preciso ter 18 anos ou mais.</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 form-group" ng-class="{'has-error': (formDados.$submitted || formDados.email.$touched) && formDados.email.$invalid}">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" class="form-control" ng-model="dados.email" required>
+                <span class="help-block" ng-show="(formDados.$submitted || formDados.email.$touched) && formDados.email.$invalid">Informe um e-mail válido.</span>
+              </div>
+              <div class="col-sm-6 form-group" ng-class="{'has-error': (formDados.$submitted || formDados.celular.$touched) && formDados.celular.$invalid}">
+                <label for="celular">Celular</label>
+                <input id="celular" name="celular" type="tel" class="form-control" ng-model="dados.celular" ui-mascara="(99) 99999-9999" celular-valido required placeholder="(00) 00000-0000">
+                <span class="help-block" ng-show="(formDados.$submitted || formDados.celular.$touched) && formDados.celular.$invalid">Informe um celular válido.</span>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-itau btn-lg pull-right">Continuar</button>
+          </div>
+        </form>
+
+        <!-- Etapa 2 -->
+        <form name="formConta" novalidate ng-if="etapa === 2" ng-submit="enviar(formConta)" class="panel panel-default">
+          <div class="panel-body">
+            <div class="radio tipo-conta" ng-repeat="t in tiposConta" ng-class="{'selecionado': dados.tipoConta === t.valor}">
+              <label>
+                <input type="radio" name="tipoConta" ng-model="dados.tipoConta" ng-value="t.valor">
+                <strong>{{t.nome}}</strong><br><span class="text-muted">{{t.descricao}}</span>
+              </label>
+            </div>
+            <div class="checkbox" ng-class="{'has-error': formConta.$submitted && formConta.aceite.$invalid}">
+              <label><input type="checkbox" name="aceite" ng-model="dados.aceite" required> Li e aceito os termos de uso (demonstração)</label>
+            </div>
+            <button type="button" class="btn btn-default btn-lg" ng-click="voltar()">Voltar</button>
+            <button type="submit" class="btn btn-itau btn-lg pull-right" ng-disabled="enviando">
+              <span ng-show="enviando" class="spinner spinner-branco"></span> {{ enviando ? 'Enviando...' : 'Abrir conta' }}
+            </button>
+          </div>
+        </form>
+
+        <!-- Etapa 3 -->
+        <div class="panel panel-default text-center confirmacao" ng-if="etapa === 3">
+          <div class="panel-body">
+            <span class="glyphicon glyphicon-ok-circle confirmacao-icone"></span>
+            <h2>Tudo certo, {{dados.nome.split(' ')[0]}}!</h2>
+            <p>Sua solicitação de <strong>{{ (tiposConta | filter:{valor: dados.tipoConta})[0].nome }}</strong> foi registrada (simulação).</p>
+            <p>CPF: {{dados.cpf | cpf}} &middot; Protocolo: <code>{{protocolo}}</code></p>
+            <a href="#!/" class="btn btn-itau">Voltar para o início</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

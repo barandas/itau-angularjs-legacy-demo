@@ -1,0 +1,13 @@
+<div class="card-carousel">
+  <div class="row card-carousel-trilho">
+    <div ng-repeat="item in visiveis()" class="card-carousel-item"
+         ng-class="{'col-sm-12': visiveis().length === 1, 'col-sm-6': visiveis().length === 2, 'col-sm-4': visiveis().length === 3, 'col-sm-3': visiveis().length >= 4}">
+      <div ng-include="template"></div>
+    </div>
+  </div>
+  <div class="card-carousel-paginacao" ng-show="totalPaginas() > 1">
+    <button type="button" class="seta" ng-click="irPara(pagina - 1)" ng-disabled="pagina === 0" aria-label="página anterior">&lsaquo;</button>
+    <button type="button" class="dot" ng-repeat="p in paginas()" ng-class="{'ativo': p === pagina}" ng-click="irPara(p)" aria-label="Página {{p + 1}}"></button>
+    <button type="button" class="seta" ng-click="irPara(pagina + 1)" ng-disabled="pagina >= totalPaginas() - 1" aria-label="próxima página">&rsaquo;</button>
+  </div>
+</div>

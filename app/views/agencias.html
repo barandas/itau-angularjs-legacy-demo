@@ -1,0 +1,38 @@
+<div class="pagina-interna">
+  <section class="banner-interno">
+    <div class="container">
+      <ol class="breadcrumb"><li><a href="#!/">Início</a></li><li class="active">Encontre agências</li></ol>
+      <h1>Qual a agência Itaú mais próxima?</h1>
+    </div>
+  </section>
+
+  <div class="container secao">
+    <form class="form-inline form-busca-agencias" ng-submit="buscar()">
+      <div class="input-group input-group-lg busca-agencias-grupo">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+        <input type="text" class="form-control" ng-model="busca.termo" placeholder="Busque por endereço, agência, CEP" aria-label="Busque por endereço, agência, CEP">
+        <span class="input-group-btn"><button type="submit" class="btn btn-itau">Buscar</button></span>
+      </div>
+      <button type="button" class="btn btn-link" ng-click="usarLocalizacao()"><span class="glyphicon glyphicon-screenshot"></span> Usar minha localização atual</button>
+      <div class="checkbox"><label><input type="checkbox" ng-model="busca.somenteAcessiveis"> Somente com acessibilidade</label></div>
+    </form>
+
+    <p class="text-info" ng-if="localizacaoMsg">{{localizacaoMsg}}</p>
+    <p ng-show="carregando"><span class="spinner"></span> Buscando...</p>
+
+    <div class="alert alert-info" ng-if="!carregando && !(agencias | filter:filtroAcessivel).length">
+      Nenhuma agência encontrada para "{{busca.termo}}".
+    </div>
+
+    <div class="list-group lista-agencias">
+      <div class="list-group-item agencia-item" ng-repeat="a in agencias | filter:filtroAcessivel">
+        <span class="badge" ng-if="a.acessivel">Acessível</span>
+        <h4 class="list-group-item-heading">{{a.nome}} <small>Ag. {{a.numero}}</small></h4>
+        <p class="list-group-item-text">
+          {{a.endereco}} - {{a.bairro}}, {{a.cidade}}/{{a.uf}} - CEP {{a.cep}}<br>
+          <span class="text-muted"><span class="glyphicon glyphicon-time"></span> {{a.horario}}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

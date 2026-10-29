@@ -1,0 +1,34 @@
+<section class="hero" aria-label="Carrossel com {{banners.length}} itens">
+  <div class="hero-slide {{banner.tema}}" ng-repeat="banner in banners" ng-class="{'ativo': $index === indice}">
+    <div class="hero-ilustracao"></div>
+    <div class="hero-arte hidden-xs" aria-hidden="true">
+      <div class="hero-celular">
+        <div class="hero-celular-tela">
+          <span class="hero-celular-logo">itaú</span>
+          <span class="hero-celular-saldo">R$ ••••••</span>
+          <span class="hero-celular-linha"></span>
+          <span class="hero-celular-linha curta"></span>
+          <span class="hero-celular-botoes"><i></i><i></i><i></i><i></i></span>
+        </div>
+      </div>
+      <div class="hero-cartao-flutuante"><span>itaú</span></div>
+    </div>
+    <div class="container hero-conteudo">
+      <button type="button" class="hero-pausar" ng-click="alternarPausa()" aria-label="pausar o banner rotativo">
+        <span class="glyphicon" ng-class="pausado ? 'glyphicon-play' : 'glyphicon-pause'"></span>
+        {{ pausado ? 'continuar' : 'pausar' }}
+      </button>
+      <div class="hero-texto">
+        <h2>{{banner.titulo}}</h2>
+        <p>{{banner.subtitulo}}</p>
+        <a ng-href="{{banner.link}}" class="btn btn-outline-white btn-lg">{{banner.cta}}</a>
+      </div>
+      <div class="hero-controles">
+        <button type="button" class="hero-seta" ng-click="anterior()" aria-label="Item anterior">&lsaquo;</button>
+        <button type="button" class="hero-dot" ng-repeat="b in banners" ng-class="{'ativo': $index === indice}"
+                ng-click="irPara($index)" aria-label="Página {{$index + 1}} - {{b.titulo}}"></button>
+        <button type="button" class="hero-seta" ng-click="proximo()" aria-label="Próximo item">&rsaquo;</button>
+      </div>
+    </div>
+  </div>
+</section>

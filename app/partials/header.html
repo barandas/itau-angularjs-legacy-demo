@@ -1,0 +1,45 @@
+<header class="site-header" ng-controller="HeaderController" ng-class="{'header-scrolled': scrolled}">
+  <div class="container">
+    <div class="header-inner">
+      <a href="#!/" class="header-logo" aria-label="Página inicial">
+        <img src="assets/img/logo-itau.svg" alt="Itaú" width="44" height="44">
+      </a>
+      <div class="header-acoes">
+        <a href="#!/abra-sua-conta" class="btn btn-outline-white hidden-xs" aria-label="Abra sua conta">Abra sua conta</a>
+        <button type="button" class="btn-icone" aria-label="Mais acessos" ng-click="alternarMaisAcessos()" aria-expanded="{{maisAcessosAberto}}">
+          <span class="glyphicon glyphicon-user"></span>
+        </button>
+        <button type="button" class="btn-icone btn-hamburger" aria-label="Menu de navegação" ng-click="alternarMenu()" aria-expanded="{{menuAberto}}">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Painel "Mais acessos" -->
+  <div class="mais-acessos" ng-show="maisAcessosAberto">
+    <div class="container">
+      <div class="alert alert-warning demo-aviso">
+        <strong>Ambiente de demonstração.</strong> O acesso à conta está desabilitado neste projeto.
+      </div>
+      <ul class="list-inline mais-acessos-lista">
+        <li><a href="#!/">Itaú Uniclass</a></li>
+        <li><a href="#!/">Itaú Personnalité</a></li>
+        <li><a href="#!/">Itaú Empresas</a></li>
+        <li><a href="#!/">Não correntista</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Menu lateral -->
+  <div class="menu-overlay" ng-show="menuAberto" ng-click="alternarMenu()"></div>
+  <nav class="menu-lateral" ng-class="{'aberto': menuAberto}" aria-label="Menu principal">
+    <button type="button" class="close" aria-label="Fechar menu" ng-click="alternarMenu()">&times;</button>
+    <div ng-repeat="grupo in menu" class="menu-grupo">
+      <h4>{{grupo.titulo}}</h4>
+      <ul class="list-unstyled">
+        <li ng-repeat="item in grupo.itens"><a ng-href="{{item.link}}" ng-click="alternarMenu()">{{item.nome}}</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>

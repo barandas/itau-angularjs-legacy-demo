@@ -1,0 +1,8 @@
+[
+  { "icone": "glyphicon-barcode", "titulo": "Boleto", "descricao": "Emita 2ª via de boletos Itaú", "link": "#!/" },
+  { "icone": "glyphicon-credit-card", "titulo": "Desbloqueio de cartão", "descricao": "Saiba como fazer", "link": "#!/cartoes" },
+  { "icone": "glyphicon-phone", "titulo": "Aplicativos", "descricao": "Baixe os apps do banco Itaú", "link": "#!/" },
+  { "icone": "glyphicon-file", "titulo": "Fatura digital", "descricao": "Receba a fatura do seu cartão", "link": "#!/cartoes" },
+  { "icone": "glyphicon-list-alt", "titulo": "Comprovantes", "descricao": "Gere uma 2ª via do comprovante", "link": "#!/" },
+  { "icone": "glyphicon-question-sign", "titulo": "Atendimento", "descricao": "Conheça nossos canais de ajuda", "link": "#!/agencias" }
+]

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="itauApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title ng-bind="pageTitle + ' | Itaú (demo)'">Itaú (demo)</title>
+  <link rel="icon" href="assets/img/logo-itau.svg">
+
+  <!-- Vendor CSS -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <!-- App CSS -->
+  <link rel="stylesheet" href="assets/css/itau.css">
+</head>
+<body ng-controller="MainController">
+
+  <!--[if lt IE 9]>
+    <p class="browserupgrade">Você está usando um navegador desatualizado.</p>
+  <![endif]-->
+
+  <div ng-include="'app/partials/header.html'"></div>
+
+  <main id="conteudo" class="site-main" ng-view></main>
+
+  <div ng-include="'app/partials/footer.html'"></div>
+
+  <cookie-banner></cookie-banner>
+  <whatsapp-button></whatsapp-button>
+
+  <!-- Vendor JS (ordem importa!) -->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="node_modules/angular-route/angular-route.min.js"></script>
+  <script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+  <script src="node_modules/angular-i18n/angular-locale_pt-br.js"></script>
+
+  <!-- App JS -->
+  <script src="app/app.module.js"></script>
+  <script src="app/app.routes.js"></script>
+
+  <script src="app/filters/brl.filter.js"></script>
+  <script src="app/filters/cpf.filter.js"></script>
+
+  <script src="app/services/api.service.js"></script>
+  <script src="app/services/produtos.service.js"></script>
+  <script src="app/services/cartoes.service.js"></script>
+  <script src="app/services/agencias.service.js"></script>
+  <script src="app/services/simulador.service.js"></script>
+  <script src="app/services/validacao.service.js"></script>
+  <script src="app/services/cookie-consent.service.js"></script>
+
+  <script src="app/directives/hero-carousel.directive.js"></script>
+  <script src="app/directives/card-carousel.directive.js"></script>
+  <script src="app/directives/cookie-banner.directive.js"></script>
+  <script src="app/directives/whatsapp-button.directive.js"></script>
+  <script src="app/directives/mask.directive.js"></script>
+  <script src="app/directives/cpf-validator.directive.js"></script>
+
+  <script src="app/controllers/main.controller.js"></script>
+  <script src="app/controllers/header.controller.js"></script>
+  <script src="app/controllers/home.controller.js"></script>
+  <script src="app/controllers/cartoes.controller.js"></script>
+  <script src="app/controllers/emprestimos.controller.js"></script>
+  <script src="app/controllers/agencias.controller.js"></script>
+  <script src="app/controllers/abra-conta.controller.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<div>
+  <section class="cookie-banner" ng-if="cookies.visivel" role="dialog" aria-label="Consentimento de cookies">
+    <p class="cookie-texto">
+      Utilizamos cookies para melhorar a experiência de navegação e identificar suas preferências.
+      Você pode aceitar todos os cookies, rejeitar os não essenciais ou gerenciar os que serão usados.
+      Leia mais em nossa <a href="#!/">Política de Privacidade e cookies</a>.
+    </p>
+    <div class="cookie-acoes">
+      <a href="" class="cookie-gerenciar" ng-click="gerenciarCookies()">Gerenciar cookies</a>
+      <div ng-show="cookies.gerenciando" class="cookie-opcoes">
+        <label class="checkbox-inline"><input type="checkbox" checked disabled> Essenciais</label>
+        <label class="checkbox-inline"><input type="checkbox" ng-model="cookies.analiticos"> Analíticos</label>
+        <label class="checkbox-inline"><input type="checkbox" ng-model="cookies.marketing"> Marketing</label>
+      </div>
+      <button type="button" class="btn btn-outline-navy btn-block" ng-click="rejeitarCookies()">Rejeitar não essenciais</button>
+      <button type="button" class="btn btn-itau btn-block" ng-click="aceitarCookies()">Aceitar todos</button>
+    </div>
+  </section>
+  <button type="button" class="cookie-reabrir" ng-if="!cookies.visivel" ng-click="reabrirCookies()" aria-label="Gerenciar cookies">
+    <span class="glyphicon glyphicon-cog"></span>
+  </button>
+</div>

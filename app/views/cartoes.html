@@ -1,0 +1,89 @@
+<div class="pagina-interna">
+  <section class="banner-interno">
+    <div class="container">
+      <ol class="breadcrumb"><li><a href="#!/">Início</a></li><li class="active">Cartões de crédito</li></ol>
+      <h1>Cartões de crédito</h1>
+      <p>Encontre o cartão que dá match com você.</p>
+    </div>
+  </section>
+
+  <div class="container secao">
+    <div class="row">
+      <aside class="col-md-3">
+        <div class="panel panel-default painel-filtros">
+          <div class="panel-heading"><strong>Filtrar cartões</strong></div>
+          <div class="panel-body">
+            <div class="form-group">
+              <label for="renda">Sua renda mensal (R$)</label>
+              <input id="renda" type="number" min="0" step="100" class="form-control" ng-model="criterios.renda" placeholder="Ex.: 5000">
+            </div>
+            <div class="form-group">
+              <label for="programa">Benefício preferido</label>
+              <select id="programa" class="form-control" ng-model="criterios.programa"
+                      ng-options="p.valor as p.nome for p in programas"></select>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" ng-model="criterios.semAnuidade"> Somente sem anuidade</label>
+            </div>
+            <div class="form-group">
+              <label for="ordem">Ordenar por</label>
+              <select id="ordem" class="form-control" ng-model="ordenacao">
+                <option value="anuidade">Menor anuidade</option>
+                <option value="-pontosPorDolar">Mais pontos</option>
+                <option value="rendaMinima">Menor renda mínima</option>
+                <option value="nome">Nome</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-default btn-block" ng-click="limpar()">Limpar filtros</button>
+          </div>
+        </div>
+      </aside>
+
+      <div class="col-md-9">
+        <p class="text-muted resultado-contagem">{{cartoes.length}} cartão(ões) encontrado(s)</p>
+        <div class="alert alert-info" ng-if="todos.length && !cartoes.length">Nenhum cartão encontrado para os filtros selecionados.</div>
+        <div class="row">
+          <div class="col-sm-6 col-lg-4" ng-repeat="item in cartoes | orderBy:ordenacao track by item.id">
+            <div class="cartao-card cartao-card-lista">
+              <div class="cartao-plastico {{item.estilo}}">
+                <span class="cartao-chip"></span>
+                <span class="cartao-bandeira">{{item.bandeira}}</span>
+                <span class="cartao-categoria">{{item.categoria}}</span>
+                <span class="cartao-logo">itaú</span>
+              </div>
+              <h3>{{item.nome}}</h3>
+              <p>{{item.destaque}}</p>
+              <dl class="dl-horizontal cartao-detalhes">
+                <dt>Anuidade</dt><dd>{{ item.anuidade ? (item.anuidade | brl) : 'Grátis' }}</dd>
+                <dt>Renda mín.</dt><dd>{{item.rendaMinima | brl}}</dd>
+                <dt>Pontos/US$</dt><dd>{{ item.pontosPorDolar || '—' }}</dd>
+              </dl>
+              <button type="button" class="btn btn-itau btn-block" ng-click="pedir(item)">Peça o seu</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Bootstrap 3 (controlado via jQuery) -->
+  <div class="modal fade" id="modalPedido" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">{{selecionado.nome}}</h4>
+        </div>
+        <div class="modal-body">
+          <p>{{selecionado.destaque}}</p>
+          <p>Anuidade: <strong>{{ selecionado.anuidade ? (selecionado.anuidade | brl) : 'Grátis' }}</strong></p>
+          <div class="alert alert-warning">Ambiente de demonstração: nenhum pedido é realizado.</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+          <a href="#!/abra-sua-conta" class="btn btn-itau" data-dismiss="modal">Abrir conta e pedir</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

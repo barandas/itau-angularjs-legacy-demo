@@ -1,0 +1,5 @@
+{
+  "pessoal": { "nome": "Empréstimo pessoal", "taxaMensal": 0.0399, "prazoMin": 6, "prazoMax": 48, "valorMin": 500, "valorMax": 50000 },
+  "consignado": { "nome": "Consignado CLT", "taxaMensal": 0.0219, "prazoMin": 12, "prazoMax": 84, "valorMin": 1000, "valorMax": 150000 },
+  "renegociacao": { "nome": "Renegociação", "taxaMensal": 0.0179, "prazoMin": 12, "prazoMax": 72, "valorMin": 500, "valorMax": 200000 }
+}

@@ -1,0 +1,77 @@
+<div class="pagina-interna">
+  <section class="banner-interno">
+    <div class="container">
+      <ol class="breadcrumb"><li><a href="#!/">Início</a></li><li class="active">Empréstimos e Financiamentos</li></ol>
+      <h1>Simule seu empréstimo</h1>
+      <p>Descubra o valor das parcelas antes de contratar.</p>
+    </div>
+  </section>
+
+  <div class="container secao">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <form name="simForm" novalidate ng-if="taxas">
+              <div class="form-group">
+                <label>Tipo de crédito</label>
+                <div class="btn-group btn-group-justified" role="group">
+                  <label class="btn btn-default" ng-repeat="(chave, t) in taxas" ng-class="{'active': form.tipo === chave}">
+                    <input type="radio" class="sr-only" ng-model="form.tipo" ng-value="chave"> {{t.nome}}
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="valor" class="label-slider">Quanto você precisa? <strong class="pull-right">{{form.valor | brl}}</strong></label>
+                <input id="valor" type="range" ng-model="form.valor" min="{{produtoAtual().valorMin}}" max="{{produtoAtual().valorMax}}" step="500">
+                <input type="number" class="form-control" ng-model="form.valor" ng-model-options="{ debounce: 300 }">
+              </div>
+              <div class="form-group">
+                <label for="meses" class="label-slider">Em quantas parcelas? <strong class="pull-right">{{form.meses}}x</strong></label>
+                <input id="meses" type="range" ng-model="form.meses" min="{{produtoAtual().prazoMin}}" max="{{produtoAtual().prazoMax}}" step="1">
+              </div>
+              <p class="text-muted small">Taxa a partir de {{ produtoAtual().taxaMensal * 100 | number:2 }}% a.m.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-7">
+        <div class="alert alert-danger" ng-if="erroSimulacao">{{erroSimulacao}}</div>
+        <div class="resultado-simulacao" ng-if="resultado">
+          <p class="resultado-label">Parcelas de</p>
+          <p class="resultado-parcela">{{resultado.meses}}x {{resultado.parcela | brl}}</p>
+          <table class="table table-condensed">
+            <tbody>
+              <tr><td>Valor solicitado</td><td class="text-right">{{resultado.valorSolicitado | brl}}</td></tr>
+              <tr><td>Taxa de juros</td><td class="text-right">{{resultado.taxaMensal * 100 | number:2}}% a.m. ({{resultado.taxaAnual * 100 | number:2}}% a.a.)</td></tr>
+              <tr><td>Juros totais</td><td class="text-right">{{resultado.juros | brl}}</td></tr>
+              <tr><td>IOF estimado</td><td class="text-right">{{resultado.iof | brl}}</td></tr>
+              <tr class="active"><td><strong>Custo efetivo total</strong></td><td class="text-right"><strong>{{resultado.cet | brl}}</strong></td></tr>
+            </tbody>
+          </table>
+          <button type="button" class="btn btn-outline-navy" ng-click="mostrarCronograma = !mostrarCronograma">
+            {{ mostrarCronograma ? 'Ocultar' : 'Ver' }} cronograma de pagamento
+          </button>
+          <a href="#!/abra-sua-conta" class="btn btn-itau">Contratar</a>
+
+          <div class="table-responsive cronograma" ng-show="mostrarCronograma">
+            <table class="table table-striped table-hover">
+              <thead><tr><th>#</th><th>Parcela</th><th>Juros</th><th>Amortização</th><th>Saldo</th></tr></thead>
+              <tbody>
+                <tr ng-repeat="linha in cronograma">
+                  <td>{{linha.numero}}</td>
+                  <td>{{linha.parcela | brl}}</td>
+                  <td>{{linha.juros | brl}}</td>
+                  <td>{{linha.amortizacao | brl}}</td>
+                  <td>{{linha.saldo | brl}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p class="text-muted small">* Simulação meramente ilustrativa. Valores fictícios para fins de demonstração.</p>
+      </div>
+    </div>
+  </div>
+</div>

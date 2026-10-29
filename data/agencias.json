@@ -1,0 +1,12 @@
+[
+  { "numero": "0001", "nome": "Agência Praça Alfredo Egydio", "endereco": "Praça Alfredo Egydio de Souza Aranha, 100", "bairro": "Parque Jabaquara", "cidade": "São Paulo", "uf": "SP", "cep": "04344-902", "horario": "10h às 16h", "acessivel": true },
+  { "numero": "0350", "nome": "Agência Paulista", "endereco": "Av. Paulista, 1000", "bairro": "Bela Vista", "cidade": "São Paulo", "uf": "SP", "cep": "01310-100", "horario": "10h às 16h", "acessivel": true },
+  { "numero": "0412", "nome": "Agência Faria Lima", "endereco": "Av. Brig. Faria Lima, 3500", "bairro": "Itaim Bibi", "cidade": "São Paulo", "uf": "SP", "cep": "04538-132", "horario": "10h às 16h", "acessivel": true },
+  { "numero": "0789", "nome": "Agência Pinheiros", "endereco": "Rua dos Pinheiros, 870", "bairro": "Pinheiros", "cidade": "São Paulo", "uf": "SP", "cep": "05422-001", "horario": "10h às 15h", "acessivel": false },
+  { "numero": "1520", "nome": "Agência Copacabana", "endereco": "Av. Nossa Sra. de Copacabana, 540", "bairro": "Copacabana", "cidade": "Rio de Janeiro", "uf": "RJ", "cep": "22020-001", "horario": "10h às 16h", "acessivel": true },
+  { "numero": "1633", "nome": "Agência Centro Rio", "endereco": "Av. Rio Branco, 120", "bairro": "Centro", "cidade": "Rio de Janeiro", "uf": "RJ", "cep": "20040-001", "horario": "10h às 16h", "acessivel": true },
+  { "numero": "2210", "nome": "Agência Savassi", "endereco": "Rua Pernambuco, 1000", "bairro": "Savassi", "cidade": "Belo Horizonte", "uf": "MG", "cep": "30130-151", "horario": "10h às 16h", "acessivel": true },
+  { "numero": "3105", "nome": "Agência Moinhos", "endereco": "Rua Padre Chagas, 300", "bairro": "Moinhos de Vento", "cidade": "Porto Alegre", "uf": "RS", "cep": "90570-080", "horario": "10h às 15h", "acessivel": false },
+  { "numero": "4021", "nome": "Agência Boa Viagem", "endereco": "Av. Boa Viagem, 2500", "bairro": "Boa Viagem", "cidade": "Recife", "uf": "PE", "cep": "51020-000", "horario": "9h às 14h", "acessivel": true },
+  { "numero": "5150", "nome": "Agência Asa Sul", "endereco": "SCS Quadra 2, Bloco A", "bairro": "Asa Sul", "cidade": "Brasília", "uf": "DF", "cep": "70302-000", "horario": "10h às 16h", "acessivel": true }
+]

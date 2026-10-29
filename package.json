@@ -1,0 +1,30 @@
+{
+  "name": "itau-angularjs-legacy-demo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "http-server -p 8080 -c-1 .",
+    "test": "karma start karma.conf.js --single-run",
+    "test:watch": "karma start karma.conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Demonstração de uma aplicação bancária legada em AngularJS para migração ao React.",
+  "dependencies": {
+    "angular": "^1.8.3",
+    "angular-i18n": "^1.8.3",
+    "angular-route": "^1.8.3",
+    "angular-sanitize": "^1.8.3",
+    "bootstrap": "^3.4.1",
+    "jquery": "^1.12.4"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.8.3",
+    "http-server": "^14.1.1",
+    "jasmine-core": "^4.6.1",
+    "karma": "^6.4.4",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-jasmine": "^5.1.0"
+  }
+}
