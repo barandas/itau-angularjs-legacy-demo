@@ -19,10 +19,7 @@ export function Layout() {
 
   return (
     <>
-      <Header
-        menuAberto={menuAberto}
-        onAlternarMenu={() => setMenuAberto((aberto) => !aberto)}
-      />
+      <Header menuAberto={menuAberto} onAlternarMenu={() => setMenuAberto((aberto) => !aberto)} />
       <main id="conteudo" className="site-main">
         <Outlet />
       </main>

@@ -41,9 +41,7 @@ export function idadeMinima(
     return false;
   }
 
-  const nasc = new Date(
-    dataNascimento instanceof Date ? dataNascimento.getTime() : dataNascimento
-  );
+  const nasc = new Date(dataNascimento instanceof Date ? dataNascimento.getTime() : dataNascimento);
   if (isNaN(nasc.getTime())) {
     return false;
   }

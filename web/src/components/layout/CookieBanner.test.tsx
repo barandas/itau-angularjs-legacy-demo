@@ -27,7 +27,9 @@ describe('CookieBanner', () => {
     await user.click(screen.getByRole('button', { name: 'Aceitar todos' }));
 
     expect(localStorage.getItem('itau-demo-cookie-consent')).toBe('todos');
-    expect(screen.queryByRole('dialog', { name: 'Consentimento de cookies' })).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('dialog', { name: 'Consentimento de cookies' })
+    ).not.toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: 'Gerenciar cookies' }));
 

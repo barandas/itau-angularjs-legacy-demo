@@ -41,11 +41,7 @@ export function calcularIof(valor: number, meses: number): number {
   return arredondar(valor * IOF_ADICIONAL + valor * IOF_DIARIO * dias);
 }
 
-export function simular(
-  valor: number,
-  taxaMensal: number,
-  meses: number
-): ResultadoSimulacao {
+export function simular(valor: number, taxaMensal: number, meses: number): ResultadoSimulacao {
   const parcela = calcularParcela(valor, taxaMensal, meses);
   const total = arredondar(parcela * meses);
   const iof = calcularIof(valor, meses);

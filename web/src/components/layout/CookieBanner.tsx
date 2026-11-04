@@ -9,10 +9,7 @@ export function CookieBanner() {
   const [analiticos, setAnaliticos] = useState(false);
   const [marketing, setMarketing] = useState(false);
 
-  useEffect(
-    () => cookieConsent.subscribe((preferencia) => setVisivel(!preferencia)),
-    []
-  );
+  useEffect(() => cookieConsent.subscribe((preferencia) => setVisivel(!preferencia)), []);
 
   if (!visivel) {
     return (
@@ -30,16 +27,11 @@ export function CookieBanner() {
   }
 
   return (
-    <section
-      className={styles.banner}
-      role="dialog"
-      aria-label="Consentimento de cookies"
-    >
+    <section className={styles.banner} role="dialog" aria-label="Consentimento de cookies">
       <p className={styles.text}>
-        Utilizamos cookies para melhorar a experiência de navegação e identificar
-        suas preferências. Você pode aceitar todos os cookies, rejeitar os não
-        essenciais ou gerenciar os que serão usados. Leia mais em nossa{' '}
-        <Link to="/">Política de Privacidade e cookies</Link>.
+        Utilizamos cookies para melhorar a experiência de navegação e identificar suas preferências.
+        Você pode aceitar todos os cookies, rejeitar os não essenciais ou gerenciar os que serão
+        usados. Leia mais em nossa <Link to="/">Política de Privacidade e cookies</Link>.
       </p>
       <div className={styles.actions}>
         <button

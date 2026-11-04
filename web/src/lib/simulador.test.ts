@@ -18,10 +18,7 @@ describe('simulador', () => {
 
   it('gera cronograma com amortização total do principal', () => {
     const cronograma = gerarCronograma(10000, 0.0399, 24);
-    const amortizacaoTotal = cronograma.reduce(
-      (total, linha) => total + linha.amortizacao,
-      0
-    );
+    const amortizacaoTotal = cronograma.reduce((total, linha) => total + linha.amortizacao, 0);
 
     expect(cronograma).toHaveLength(24);
     expect(cronograma[cronograma.length - 1].saldo).toBe(0);

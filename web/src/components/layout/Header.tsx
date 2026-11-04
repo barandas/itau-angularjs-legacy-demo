@@ -91,26 +91,28 @@ export function Header({ menuAberto, onAlternarMenu }: HeaderProps) {
         <div className={styles.moreAccess}>
           <div className="container">
             <div className={styles.demoNotice} role="status">
-              <strong>Ambiente de demonstração.</strong> O acesso à conta está
-              desabilitado neste projeto.
+              <strong>Ambiente de demonstração.</strong> O acesso à conta está desabilitado neste
+              projeto.
             </div>
             <ul className={styles.moreAccessLinks}>
-              <li><Link to="/">Itaú Uniclass</Link></li>
-              <li><Link to="/">Itaú Personnalité</Link></li>
-              <li><Link to="/">Itaú Empresas</Link></li>
-              <li><Link to="/">Não correntista</Link></li>
+              <li>
+                <Link to="/">Itaú Uniclass</Link>
+              </li>
+              <li>
+                <Link to="/">Itaú Personnalité</Link>
+              </li>
+              <li>
+                <Link to="/">Itaú Empresas</Link>
+              </li>
+              <li>
+                <Link to="/">Não correntista</Link>
+              </li>
             </ul>
           </div>
         </div>
       )}
 
-      {menuAberto && (
-        <div
-          className={styles.overlay}
-          aria-hidden="true"
-          onClick={onAlternarMenu}
-        />
-      )}
+      {menuAberto && <div className={styles.overlay} aria-hidden="true" onClick={onAlternarMenu} />}
       <nav
         id="menu-principal"
         className={`${styles.sideMenu} ${menuAberto ? styles.sideMenuOpen : ''}`}
@@ -131,7 +133,9 @@ export function Header({ menuAberto, onAlternarMenu }: HeaderProps) {
             <ul>
               {grupo.itens.map((item) => (
                 <li key={item.nome}>
-                  <Link to={item.to} onClick={onAlternarMenu}>{item.nome}</Link>
+                  <Link to={item.to} onClick={onAlternarMenu}>
+                    {item.nome}
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -8,11 +8,7 @@ export function AppRoutes() {
     <Routes>
       <Route element={<Layout />}>
         {Object.entries(routeTitles).map(([path, title]) => (
-          <Route
-            key={path}
-            path={path}
-            element={<PendingMigration titulo={title} />}
-          />
+          <Route key={path} path={path} element={<PendingMigration titulo={title} />} />
         ))}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>

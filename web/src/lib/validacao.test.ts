@@ -21,16 +21,8 @@ describe('validacao', () => {
 
   it('calcula idade mínima em relação à data atual', () => {
     const hoje = new Date();
-    const aniversario18 = new Date(
-      hoje.getFullYear() - 18,
-      hoje.getMonth(),
-      hoje.getDate()
-    );
-    const aniversario17 = new Date(
-      hoje.getFullYear() - 18,
-      hoje.getMonth(),
-      hoje.getDate() + 1
-    );
+    const aniversario18 = new Date(hoje.getFullYear() - 18, hoje.getMonth(), hoje.getDate());
+    const aniversario17 = new Date(hoje.getFullYear() - 18, hoje.getMonth(), hoje.getDate() + 1);
 
     expect(idadeMinima(aniversario18, 18)).toBe(true);
     expect(idadeMinima(aniversario17, 18)).toBe(false);

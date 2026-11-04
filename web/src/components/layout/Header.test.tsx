@@ -21,9 +21,7 @@ describe('Header', () => {
       );
     }
 
-    render(
-      <HeaderComEstado />
-    );
+    render(<HeaderComEstado />);
 
     const menu = screen.getByRole('button', { name: 'Menu de navegação' });
     expect(menu).toHaveAttribute('aria-expanded', 'false');

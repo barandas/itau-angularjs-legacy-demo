@@ -19,13 +19,9 @@ export function buscarAgencias(agencias: Agencia[], termo: unknown): Agencia[] {
 
   const digitos = texto.replace(/\D/g, '');
   return agencias.filter((agencia) => {
-    const alvo = normalizar([
-      agencia.nome,
-      agencia.endereco,
-      agencia.bairro,
-      agencia.cidade,
-      agencia.uf
-    ].join(' '));
+    const alvo = normalizar(
+      [agencia.nome, agencia.endereco, agencia.bairro, agencia.cidade, agencia.uf].join(' ')
+    );
     if (alvo.indexOf(texto) !== -1) {
       return true;
     }

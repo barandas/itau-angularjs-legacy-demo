@@ -18,10 +18,9 @@ describe('rotas React', () => {
     });
     await user.click(screen.getByRole('button', { name: 'Menu de navegação' }));
     await user.click(
-      within(screen.getByRole('navigation', { name: 'Menu principal' })).getByRole(
-        'link',
-        { name: 'Encontre agências' }
-      )
+      within(screen.getByRole('navigation', { name: 'Menu principal' })).getByRole('link', {
+        name: 'Encontre agências'
+      })
     );
 
     await waitFor(() => {
@@ -36,7 +35,9 @@ describe('rotas React', () => {
       </MemoryRouter>
     );
 
-    expect(await screen.findByRole('heading', { name: 'Abra sua conta no Banco Itaú' })).toBeVisible();
+    expect(
+      await screen.findByRole('heading', { name: 'Abra sua conta no Banco Itaú' })
+    ).toBeVisible();
     await waitFor(() => {
       expect(document.title).toBe('Abra sua conta no Banco Itaú | Itaú (demo)');
     });

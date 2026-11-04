@@ -6,10 +6,7 @@ export interface CriteriosCartoes {
   semAnuidade?: boolean;
 }
 
-export function filtrarCartoes(
-  cartoes: Cartao[],
-  criterios: CriteriosCartoes = {}
-): Cartao[] {
+export function filtrarCartoes(cartoes: Cartao[], criterios: CriteriosCartoes = {}): Cartao[] {
   return cartoes.filter((cartao) => {
     if (cartao.programa === 'todos') {
       return false;
