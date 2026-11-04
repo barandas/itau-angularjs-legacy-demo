@@ -1,0 +1,16 @@
+.pending {
+  min-height: 60vh;
+  padding: 30px 0 34px;
+  background: linear-gradient(135deg, var(--laranja), #ff9a3c);
+  color: #fff;
+}
+
+.pending h1 {
+  margin: 6px 0;
+  font-weight: 700;
+}
+
+.pending p {
+  margin: 0;
+  font-size: 16px;
+}

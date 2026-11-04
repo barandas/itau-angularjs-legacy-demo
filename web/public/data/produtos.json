@@ -1,0 +1,7 @@
+[
+  { "id": "renegociacao", "categoria": "Solução", "icone": "glyphicon-refresh", "titulo": "Renegociação Itaú", "descricao": "Aproveite condições especiais para reorganizar sua vida financeira.", "cta": "Quero aproveitar", "link": "#!/emprestimos", "cor": "#f5d0a9" },
+  { "id": "consignado", "categoria": "Empréstimo", "icone": "glyphicon-usd", "titulo": "Crédito Consignado CLT", "descricao": "Taxas atrativas para trabalhadores CLT e dinheiro na conta em poucos minutos após a aprovação.", "cta": "Confira aqui", "link": "#!/emprestimos", "cor": "#c9dcf5" },
+  { "id": "cartao-ideal", "categoria": "Cartões", "icone": "glyphicon-credit-card", "titulo": "O cartão de crédito ideal", "descricao": "Selecione o benefício do cartão de crédito ideal pra você.", "cta": "Peça o seu", "link": "#!/cartoes", "cor": "#ffe0c2" },
+  { "id": "credito", "categoria": "Crédito", "icone": "glyphicon-transfer", "titulo": "Conheça nossos créditos", "descricao": "Encontre tudo o que precisa sobre crédito em um único lugar no app.", "cta": "Saiba mais", "link": "#!/emprestimos", "cor": "#d7ecd9" },
+  { "id": "controle-gastos", "categoria": "app Itaú", "icone": "glyphicon-phone", "titulo": "Controle de Gastos", "descricao": "Descubra um novo jeito de saber para onde vão seus gastos.", "cta": "Conheça", "link": "#!/", "cor": "#e6dcf5" }
+]
