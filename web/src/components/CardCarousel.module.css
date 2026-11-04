@@ -1,0 +1,46 @@
+.track {
+  display: grid;
+  align-items: stretch;
+  margin: 0 -15px;
+}
+
+.item {
+  min-width: 0;
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 20px;
+}
+
+.arrow {
+  padding: 0 12px;
+  border: 0;
+  background: none;
+  color: #333;
+  font-size: 28px;
+  vertical-align: middle;
+}
+
+.arrow:disabled {
+  color: #bbb;
+  cursor: default;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  margin: 0 3px;
+  padding: 0;
+  border: 1px solid #333;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.dotActive {
+  background: #333;
+}
