@@ -1,0 +1,44 @@
+.card {
+  height: 100%;
+  overflow: hidden;
+  padding-bottom: 20px;
+  border: 1px solid #eee;
+  border-radius: 18px;
+}
+
+.image {
+  display: flex;
+  height: 170px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 16px;
+}
+
+.imageIcon {
+  width: 48px;
+  height: 48px;
+  color: rgb(255 255 255 / 50%);
+  fill: currentColor;
+}
+
+.imageCutout {
+  fill: #fff;
+}
+
+.card h3,
+.card p,
+.card a {
+  display: block;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.card h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.card p {
+  min-height: 64px;
+  color: #444;
+}

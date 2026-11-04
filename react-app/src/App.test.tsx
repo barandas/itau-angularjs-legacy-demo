@@ -36,7 +36,7 @@ describe('rotas React', () => {
       </MemoryRouter>
     );
 
-    expect(await screen.findByRole('heading', { name: 'Abra sua conta no Banco Itaú' })).toBeVisible();
+    expect(await screen.findByRole('heading', { name: 'Resolva as questões do dia a dia' })).toBeVisible();
     await waitFor(() => {
       expect(document.title).toBe('Abra sua conta no Banco Itaú | Itaú (demo)');
     });

@@ -22,7 +22,8 @@ npm run build
 ## Estrutura
 
 - `src/components/layout/`: cabeçalho, rodapé e componentes compartilhados.
-- `src/pages/`: telas em migração.
+- `src/pages/`: telas migradas e telas em migração.
+- `src/components/`: carrosséis e cartões específicos da Home.
 - `src/lib/`: regras de negócio e acesso/cache de dados.
 - `src/hooks/`: integração de dados com React.
 - `src/styles/global.css`: tokens, reset, tipografia e botões compartilhados.
@@ -33,7 +34,7 @@ npm run build
 
 | Rota | AngularJS | React |
 | --- | --- | --- |
-| `/` | Home | Placeholder de migração |
+| `/` | Home | Home migrada |
 | `/cartoes` | Cartões | Placeholder de migração |
 | `/emprestimos` | Empréstimos | Placeholder de migração |
 | `/agencias` | Agências | Placeholder de migração |
