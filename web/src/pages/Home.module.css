@@ -183,6 +183,7 @@
 .productImageIcon {
   width: 54px;
   height: 54px;
+  fill: currentColor;
   color: rgb(0 0 0 / 25%);
 }
 

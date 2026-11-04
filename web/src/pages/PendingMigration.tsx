@@ -1,3 +1,4 @@
+import { PageHeader } from '../components/PageHeader';
 import styles from './PendingMigration.module.css';
 
 interface PendingMigrationProps {
@@ -7,11 +8,7 @@ interface PendingMigrationProps {
 export function PendingMigration({ titulo }: PendingMigrationProps) {
   return (
     <>
-      <section className={styles.pending}>
-        <div className="container">
-          <h1>{titulo}</h1>
-        </div>
-      </section>
+      <PageHeader titulo={titulo} />
       <section className={styles.content}>
         <div className="container">
           <p>Página em migração — veja a versão AngularJS</p>

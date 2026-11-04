@@ -1,8 +1,22 @@
 import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
-import { describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { limparCache } from './lib/api';
 import { AppRoutes } from './App';
+
+beforeEach(() => {
+  limparCache();
+  vi.stubGlobal(
+    'fetch',
+    vi.fn(async () => ({ ok: true, json: async () => [] }) as Response)
+  );
+});
+
+afterEach(() => {
+  vi.unstubAllGlobals();
+  limparCache();
+});
 
 describe('rotas React', () => {
   it('atualiza o título ao navegar entre rotas', async () => {
