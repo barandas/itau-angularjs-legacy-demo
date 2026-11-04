@@ -1,0 +1,30 @@
+.float {
+  position: fixed;
+  z-index: 1025;
+  right: 30px;
+  bottom: 30px;
+}
+
+.button {
+  display: flex;
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 25%);
+}
+
+.message {
+  position: absolute;
+  right: 0;
+  bottom: 70px;
+  width: 240px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
+  font-size: 13px;
+}

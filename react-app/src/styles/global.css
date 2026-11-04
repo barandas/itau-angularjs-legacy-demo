@@ -1,0 +1,152 @@
+:root {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #1c1c1c;
+  background: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --laranja: #ec7000;
+  --azul-marinho: #10197a;
+  --texto: #1c1c1c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  padding-top: 64px;
+  background: #fff;
+  font-size: 15px;
+  line-height: 1.42857143;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: #0b2f6b;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--laranja);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin-top: 0;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.site-main {
+  min-height: 60vh;
+}
+
+.btn {
+  display: inline-block;
+  min-height: 40px;
+  padding: 9px 14px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.btn-itau {
+  border-color: var(--laranja);
+  background: var(--laranja);
+  color: #fff;
+}
+
+.btn-itau:hover,
+.btn-itau:focus,
+.btn-itau:active {
+  border-color: #d06300;
+  background: #d06300;
+  color: #fff;
+}
+
+.btn-outline-white {
+  padding: 9px 18px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+}
+
+.btn-outline-white:hover,
+.btn-outline-white:focus {
+  background: #fff;
+  color: var(--laranja);
+}
+
+.btn-outline-navy {
+  border: 1px solid var(--azul-marinho);
+  background: #fff;
+  color: var(--azul-marinho);
+}
+
+.btn-outline-navy:hover,
+.btn-outline-navy:focus {
+  background: var(--azul-marinho);
+  color: #fff;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.link-seta {
+  color: var(--azul-marinho);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.link-seta span {
+  margin-left: 4px;
+  font-size: 22px;
+  line-height: 1;
+  vertical-align: -2px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
