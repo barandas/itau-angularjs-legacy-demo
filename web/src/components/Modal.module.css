@@ -29,9 +29,10 @@
 
 .header h2 {
   margin: 0;
+  color: #333;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.42857143;
 }
 
 .close {
@@ -62,4 +63,21 @@
   gap: 8px;
   padding: 15px;
   border-top: 1px solid #e5e5e5;
+}
+
+.footer button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.42857143;
+}
+
+.footer button:hover,
+.footer button:focus {
+  border-color: #adadad;
+  background: #e6e6e6;
+  color: #333;
 }
