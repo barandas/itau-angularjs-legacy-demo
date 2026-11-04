@@ -1,0 +1,354 @@
+.home {
+  color: var(--texto);
+}
+
+.section {
+  padding: 48px 0;
+}
+
+.sectionTitle {
+  margin: 0 0 24px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.sectionSubtitle {
+  margin: -14px 0 24px;
+  color: #555;
+}
+
+.loading {
+  padding: 40px;
+  text-align: center;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex: none;
+  vertical-align: -0.125em;
+}
+
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+  vertical-align: middle;
+  border: 3px solid #f3d3b5;
+  border-top-color: var(--laranja);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  padding-top: 10px;
+  color: #a94442;
+}
+
+.shortcutsList {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0 -15px;
+  padding: 0;
+  list-style: none;
+}
+
+.shortcutsList li {
+  min-width: 0;
+  padding: 0 15px;
+}
+
+.shortcut {
+  display: block;
+  min-height: 110px;
+  margin-top: -1px;
+  padding: 20px 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #1c1c1c;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.shortcut:hover {
+  border-color: var(--laranja);
+  box-shadow: 0 2px 10px rgb(0 0 0 / 8%);
+  color: #1c1c1c;
+}
+
+.shortcutIcon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 14px;
+  color: #1c1c1c;
+}
+
+.shortcut strong,
+.shortcutDescription {
+  display: block;
+}
+
+.shortcut strong {
+  font-size: 15px;
+}
+
+.shortcutDescription {
+  color: #555;
+  font-size: 14px;
+}
+
+.productsSection,
+.appsSection {
+  background: #f7f5f2;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin: 0 -15px;
+}
+
+.productCell {
+  min-width: 0;
+  grid-column: span 2;
+  padding: 0 15px;
+}
+
+.productCell:nth-child(-n + 2) {
+  grid-column: span 3;
+}
+
+.productCard {
+  display: flex;
+  min-height: 230px;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 6%);
+}
+
+.productCardLarge {
+  flex-direction: row;
+}
+
+.productText {
+  flex: 1;
+  padding: 24px;
+}
+
+.productText h3 {
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.productText p {
+  color: #444;
+}
+
+.productCategory {
+  color: #555;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.productCategory [aria-hidden='true'] {
+  color: var(--laranja);
+}
+
+.productImage {
+  display: flex;
+  min-height: 140px;
+  align-items: center;
+  justify-content: center;
+}
+
+.productCardLarge .productImage {
+  width: 40%;
+  flex: none;
+}
+
+.productImageIcon {
+  width: 54px;
+  height: 54px;
+  color: rgb(0 0 0 / 25%);
+}
+
+.madeTag {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--laranja);
+  font-weight: 700;
+}
+
+.center {
+  text-align: center;
+}
+
+.appsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 30px;
+  margin: 10px 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.appsList li {
+  text-align: center;
+}
+
+.appsList li > span {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.appIcon {
+  display: inline-flex;
+  width: 72px;
+  height: 72px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.appIcon:hover {
+  color: #fff;
+  opacity: 0.9;
+}
+
+.app-itau {
+  background: #ec7000;
+}
+
+.app-personnalite {
+  background: #1b1b3a;
+}
+
+.app-empresas {
+  background: #10197a;
+}
+
+.agencyBox {
+  padding: 32px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.agencyIcon {
+  color: var(--laranja);
+}
+
+.agencyBox h2 {
+  margin: 8px 0 20px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.agencyForm label {
+  color: #555;
+  font-weight: 400;
+}
+
+.inputGroup {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+.searchIcon {
+  display: flex;
+  width: 44px;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-right: 0;
+  border-radius: 6px 0 0 6px;
+  background: #eee;
+  color: #555;
+  font-size: 20px;
+}
+
+.inputGroup input {
+  width: 1%;
+  min-width: 0;
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  background: #fff;
+  color: #555;
+}
+
+.inputGroup button {
+  border-radius: 0 6px 6px 0;
+}
+
+.locationLink {
+  display: inline-block;
+  margin-top: 14px;
+  font-weight: 600;
+}
+
+.openAccountBar {
+  display: block;
+  padding: 14px;
+  background: var(--laranja);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.openAccountBar:hover,
+.openAccountBar:focus {
+  background: #d06300;
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .shortcutsList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .shortcutsList {
+    grid-template-columns: 1fr;
+  }
+
+  .productCell,
+  .productCell:nth-child(-n + 2) {
+    grid-column: span 6;
+  }
+
+  .productCardLarge {
+    flex-direction: column;
+  }
+
+  .productCardLarge .productImage {
+    width: 100%;
+  }
+
+  .agencyBox {
+    padding: 22px;
+  }
+}
