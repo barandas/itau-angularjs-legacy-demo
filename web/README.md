@@ -35,7 +35,7 @@ npm run build
 | Rota              | AngularJS         | React                   |
 | ----------------- | ----------------- | ----------------------- |
 | `/`               | Home              | Home migrada            |
-| `/cartoes`        | Cartões           | Placeholder de migração |
+| `/cartoes`        | Cartões           | Cartões migrados        |
 | `/emprestimos`    | Empréstimos       | Placeholder de migração |
 | `/agencias`       | Agências          | Placeholder de migração |
 | `/abra-sua-conta` | Abertura de conta | Placeholder de migração |
